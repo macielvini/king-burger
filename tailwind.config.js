@@ -6,6 +6,9 @@ export default {
       fontFamily: {
         secondary: ["Roboto"],
       },
+      colors: {
+        accent: "#ea580c",
+      },
     },
   },
   plugins: [],
