@@ -9,3 +9,9 @@
     font-family: Poppins, system-ui, sans-serif;
   }
 }
+
+@layer components {
+  .btn-primary {
+    @apply w-full bg-accent font-bold p-3 rounded-lg hover:brightness-90 hover:transition-all active:brightness-110;
+  }
+}
