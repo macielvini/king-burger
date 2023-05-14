@@ -3,8 +3,12 @@ import logo from "../../assets/logo/logo.svg";
 import TextInput from "../../components/forms/TextInput";
 import { Link } from "react-router-dom";
 
-function Login() {
-  const [credentials, setCredentials] = useState({ email: "", password: "" });
+function Register() {
+  const [credentials, setCredentials] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
 
   function formHandler(e) {
     e.preventDefault();
@@ -23,8 +27,15 @@ function Login() {
           className="md:bg-slate-800 md:p-16 px-12 py-16 mt-3 rounded-xl flex flex-col gap-8 w-full max-w-xl"
         >
           <p className="hidden md:block text-4xl text-center font-medium">
-            Faça login
+            Criar uma conta
           </p>
+          <TextInput
+            label={"Seu nome:"}
+            name={"name"}
+            placeholder={"Exemplo: John Doe"}
+            type={"text"}
+            handler={formHandler}
+          />
           <TextInput
             label={"E-mail:"}
             name={"email"}
@@ -41,10 +52,10 @@ function Login() {
             handler={formHandler}
           />
           <button type="submit" className="btn-primary">
-            Entrar
+            Criar conta
           </button>
-          <Link to={"/register"} className="text-center">
-            Criar uma conta
+          <Link to={"/"} className="text-center">
+            Já tenho uma conta
           </Link>
         </form>
       </div>
@@ -52,4 +63,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Register;
