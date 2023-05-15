@@ -5,27 +5,33 @@ export const authContext = createContext();
 
 export default function AuthProvider({ children }) {
   const [credentials, setCredentials] = useState({
-    token: undefined,
-    name: undefined,
-    email: undefined,
+    token: "",
+    name: "",
+    email: "",
   });
 
   function setHeaders(token) {
     api.defaults.headers.authorization = `Bearer ${token}`;
   }
 
+  function updateStorage(credentials) {
+    localStorage.setItem("credentials", JSON.stringify(credentials));
+  }
+
   useEffect(() => {
     const storage = localStorage.getItem("credentials");
     if (storage) setCredentials(JSON.parse(storage));
+    if (storage?.token) localStorage.removeItem("credentials");
   }, []);
 
   useEffect(() => {
     setHeaders(credentials.token);
-    localStorage.setItem("credentials", JSON.stringify(credentials));
-  }, [credentials.token, credentials.email, credentials.name]);
+  }, [credentials.token]);
 
   return (
-    <authContext.Provider value={{ credentials, setCredentials }}>
+    <authContext.Provider
+      value={{ credentials, setCredentials, updateStorage }}
+    >
       {children}
     </authContext.Provider>
   );

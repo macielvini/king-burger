@@ -9,7 +9,7 @@ import { authApi } from "../../services/api/authApi";
 function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
-  const { credentials, setCredentials } = useAuth();
+  const { credentials, setCredentials, updateStorage } = useAuth();
   const navigate = useNavigate();
 
   function formHandler(e) {
@@ -22,8 +22,8 @@ function Login() {
 
     try {
       const res = await authApi.login(form);
-      console.log(credentials);
       setCredentials({ ...credentials, token: res.accessToken });
+      updateStorage({ ...credentials, token: res.accessToken });
 
       navigate("/");
     } catch (error) {
