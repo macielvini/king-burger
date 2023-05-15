@@ -5,4 +5,9 @@ async function register(body) {
   return res.data;
 }
 
-export const authApi = { register };
+async function login(body) {
+  const res = await api.post("/auth", body);
+  return res.data;
+}
+
+export const authApi = { register, login };

@@ -1,14 +1,41 @@
 import React, { useState } from "react";
 import logo from "../../assets/logo/logo.svg";
 import TextInput from "../../components/forms/TextInput";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../hooks/useAuth";
+import { toast } from "react-hot-toast";
+import { authApi } from "../../services/api/authApi";
 
 function Login() {
-  const [credentials, setCredentials] = useState({ email: "", password: "" });
+  const [form, setForm] = useState({ email: "", password: "" });
+  const [loading, setLoading] = useState(false);
+  const { credentials, setCredentials } = useAuth();
+  const navigate = useNavigate();
 
   function formHandler(e) {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  }
+
+  async function formSubmit(e) {
     e.preventDefault();
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
+    setLoading(true);
+
+    try {
+      const res = await authApi.login(form);
+      console.log(credentials);
+      setCredentials({ ...credentials, token: res.accessToken });
+
+      navigate("/");
+    } catch (error) {
+      if (error.response?.status === 401) {
+        toast.error("E-mail ou senha inválido(s)");
+      } else {
+        toast.error("Erro inesperado");
+        console.log(error.response);
+      }
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -19,6 +46,7 @@ function Login() {
       </div>
       <div className="w-full flex justify-center items-center">
         <form
+          onSubmit={formSubmit}
           action=""
           className="md:bg-slate-800 md:p-16 px-12 py-16 mt-3 rounded-xl flex flex-col gap-8 w-full max-w-xl"
         >
@@ -29,8 +57,9 @@ function Login() {
             label={"E-mail:"}
             name={"email"}
             placeholder={"Exemplo: exemplo@exemplo.com.br"}
-            type={"text"}
+            type={"email"}
             handler={formHandler}
+            disabled={loading}
           />
           <TextInput
             label={"Senha:"}
@@ -39,6 +68,7 @@ function Login() {
             type={"password"}
             minLength="6"
             handler={formHandler}
+            disabled={loading}
           />
           <button type="submit" className="btn-primary">
             Entrar
