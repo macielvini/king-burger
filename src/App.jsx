@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./styles/global.css";
-import Login from "./pages/Login";
 import Routes from "./routes";
+import { Toaster } from "react-hot-toast";
 
 function App() {
   const [signed, _] = useState(false);
@@ -9,6 +9,7 @@ function App() {
   return (
     <div className="bg-gray-950 min-h-screen text-white">
       <Routes />
+      <Toaster />
     </div>
   );
 }
