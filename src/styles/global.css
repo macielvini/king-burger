@@ -20,6 +20,6 @@
 
 @layer components {
   .btn-primary {
-    @apply w-full bg-accent font-bold p-3 rounded-lg hover:brightness-90 hover:transition-all active:brightness-110 hover:cursor-pointer;
+    @apply w-full bg-accent text-white font-bold p-3 rounded-lg hover:brightness-90 hover:transition-all active:brightness-110 hover:cursor-pointer;
   }
 }
