@@ -6,7 +6,7 @@ function Logo({ size = "sm" }) {
   return (
     <div
       className={clsx(
-        "font-secondary text-accent mx-8 min-w-max font-bold flex justify-center items-center",
+        "font-secondary text-accent min-w-max font-bold flex",
         { "text-xl gap-2": size === "sm" },
         { "text-4xl md:text-5xl gap-4": size === "lg" }
       )}
