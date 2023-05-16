@@ -18,6 +18,10 @@ export default function AuthProvider({ children }) {
     localStorage.setItem("credentials", JSON.stringify(credentials));
   }
 
+  function clearStorage() {
+    localStorage.removeItem("credentials");
+  }
+
   useEffect(() => {
     const storage = localStorage.getItem("credentials");
     if (storage) setCredentials(JSON.parse(storage));
@@ -30,7 +34,7 @@ export default function AuthProvider({ children }) {
 
   return (
     <authContext.Provider
-      value={{ credentials, setCredentials, updateStorage }}
+      value={{ credentials, setCredentials, updateStorage, clearStorage }}
     >
       {children}
     </authContext.Provider>
