@@ -7,7 +7,7 @@ function Home() {
   return (
     <>
       <Header cartCount={cartCount} />
-      <div className="px-6 pt-28"></div>
+      <div className="pt-32">item</div>
     </>
   );
 }

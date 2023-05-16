@@ -9,6 +9,10 @@
     font-family: Poppins, system-ui, sans-serif;
   }
 
+  body {
+    @apply lg:px-28 px-6;
+  }
+
   input:disabled {
     @apply brightness-90 disabled:cursor-wait bg-slate-900 text-slate-400;
   }
