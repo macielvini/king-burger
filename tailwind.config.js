@@ -4,7 +4,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        secondary: ["Roboto"],
+        secondary: ["Suez One"],
       },
       colors: {
         background: "#fff",
