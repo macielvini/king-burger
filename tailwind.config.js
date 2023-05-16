@@ -9,6 +9,9 @@ export default {
       colors: {
         accent: "#ea580c",
       },
+      animation: {
+        "pulse-once": "pulse 1s linear",
+      },
     },
   },
   plugins: [],
