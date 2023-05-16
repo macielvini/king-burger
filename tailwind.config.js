@@ -7,7 +7,11 @@ export default {
         secondary: ["Roboto"],
       },
       colors: {
-        accent: "#ea580c",
+        background: "#fff",
+        ink: "#151522",
+        accent: "#522714",
+        primary: " #D62300",
+        secondary: "#f5ebdc",
       },
     },
   },

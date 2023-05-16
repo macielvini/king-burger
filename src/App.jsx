@@ -9,7 +9,7 @@ function App() {
 
   return (
     <AuthProvider>
-      <div className="bg-gray-950 min-h-screen text-white">
+      <div className="bg-background min-h-screen text-ink">
         <Routes />
         <Toaster />
       </div>
