@@ -23,12 +23,12 @@ function Header({ cartCount = 0 }) {
   }
 
   return (
-    <header className="w-screen h-24 bg-slate-900 flex justify-between gap-8 items-center fixed top-0 left-0 px-6 lg:px-28 lg:h-28">
+    <header className="w-screen h-24 bg-secondary flex justify-between gap-8 items-center fixed top-0 left-0 px-6 lg:px-28 lg:h-28">
       <Icons.IconMenu2 className="h-5 lg:hidden" />
       <Link to={"/"}>
         <Logo size="sm" />
       </Link>
-      <span className="hidden lg:flex items-center justify-center gap-3 w-full h-11 rounded-md bg-slate-800 px-6">
+      <span className="hidden lg:flex items-center justify-center gap-3 w-full h-11 rounded-md bg-background px-6">
         <Icons.IconSearch />
         <input
           className="bg-transparent w-full focus:outline-none focus:border-none"
@@ -39,7 +39,7 @@ function Header({ cartCount = 0 }) {
           onKeyUp={(e) => onEnter(e)}
         />
       </span>
-      <button className="lg:btn-primary lg:font-normal relative lg:flex max-w-fit lg:bg-accent lg:px-6 lg:py-3 lg:rounded-md">
+      <button className="lg:btn-primary relative lg:font-normal lg:flex max-w-fit lg:px-6 lg:py-3 lg:rounded-md">
         <Icons.IconReceipt />
         <span className="hidden lg:block">{`Pedidos (${cartCount})`}</span>
         <span
