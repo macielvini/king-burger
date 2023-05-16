@@ -6,7 +6,7 @@ function Logo({ size = "sm" }) {
   return (
     <div
       className={clsx(
-        "font-secondary mx-8 min-w-max font-bold flex justify-center items-center",
+        "font-secondary text-accent mx-8 min-w-max font-bold flex justify-center items-center",
         { "text-xl gap-2": size === "sm" },
         { "text-4xl md:text-5xl gap-4": size === "lg" }
       )}
@@ -19,7 +19,7 @@ function Logo({ size = "sm" }) {
           { "md:h-16 h-10": size === "lg" }
         )}
       />
-      food explorer
+      KING BURGER
     </div>
   );
 }
