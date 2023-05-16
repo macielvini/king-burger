@@ -35,14 +35,14 @@ function Register() {
 
   return (
     <div className="flex w-screen items-center justify-center h-screen flex-col lg:flex-row">
-      <div className="font-secondary w-full text-4xl md:text-5xl md:mb-10 font-bold flex justify-center items-center gap-4">
-        <img src={logo} alt="logo" className="md:h-16 h-10" />
-        food explorer
+      <div className="font-secondary text-accent w-full text-4xl md:text-5xl md:mb-10 font-bold flex justify-center items-center gap-4">
+        <img src={logo} alt="logo" className="w-12 h-12 md:w-24 md:h-24" />
+        KING BURGER
       </div>
       <div className="w-full flex justify-center items-center lg:px-10">
         <form
           onSubmit={formSubmit}
-          className="md:bg-slate-800 md:p-16 px-12 py-16 mt-3 rounded-xl flex flex-col gap-8 w-full max-w-xl"
+          className="md:bg-secondary md:p-16 px-12 py-16 mt-3 rounded-xl flex flex-col gap-8 w-full max-w-xl"
         >
           <p className="hidden md:block text-4xl text-center font-medium">
             Criar uma conta

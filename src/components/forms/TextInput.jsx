@@ -9,7 +9,7 @@ function TextInput({ type, label, placeholder, name, handler, ...rest }) {
         name={name}
         type={type}
         placeholder={placeholder}
-        className="p-3 bg-transparent border-gray-400 border-[1px] rounded-lg focus:outline-none focus:border-white"
+        className="p-3 bg-transparent border-gray-400 border-[1px] rounded-lg focus:outline-none focus:border-accent"
         onChange={handler}
         {...rest}
       />
