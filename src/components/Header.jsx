@@ -24,7 +24,7 @@ function Header({ cartCount = 0 }) {
 
   return (
     <header className="w-screen h-24 flex justify-center items-center bg-secondary fixed top-0 left-0 lg:h-28">
-      <div className="w-full max-w-screen-lg flex justify-between gap-8 items-center px-6 md:px-20 xl:px-28">
+      <div className="w-full lg:min-w-[896px] max-w-screen-lg flex justify-between gap-8 items-center mx-6 md:mx-20">
         <Icons.IconMenu2 className="h-5 lg:hidden" />
         <Link to={"/"}>
           <Logo size="sm" />
