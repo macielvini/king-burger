@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply lg:px-28 px-6;
+    @apply bg-background;
   }
 
   input:disabled {
