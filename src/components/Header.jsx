@@ -23,8 +23,8 @@ function Header({ cartCount = 0 }) {
   }
 
   return (
-    <header className="w-screen h-24 flex justify-center items-center bg-secondary fixed top-0 left-0 px-6 lg:px-28 lg:h-28">
-      <div className="w-full max-w-screen-xl flex justify-between gap-8 items-center">
+    <header className="w-screen h-24 flex justify-center items-center bg-secondary fixed top-0 left-0 lg:h-28">
+      <div className="w-full max-w-screen-lg flex justify-between gap-8 items-center px-6 md:px-20 xl:px-28">
         <Icons.IconMenu2 className="h-5 lg:hidden" />
         <Link to={"/"}>
           <Logo size="sm" />
@@ -40,9 +40,9 @@ function Header({ cartCount = 0 }) {
             onKeyUp={(e) => onEnter(e)}
           />
         </span>
-        <button className="lg:btn-primary relative lg:font-normal lg:flex max-w-fit lg:px-6 lg:py-3 lg:rounded-md">
+        <button className="md:btn-primary relative md:font-normal md:flex max-w-fit md:px-6 md:py-3 md:rounded-md">
           <Icons.IconReceipt />
-          <span className="hidden lg:block">{`Pedidos (${cartCount})`}</span>
+          <span className="hidden md:block">{`Pedidos (${cartCount})`}</span>
           <span
             className={clsx(
               "text-sm flex justify-center items-center absolute w-5 h-5 bg-red-700 rounded-full -top-2 -right-2 transition-all lg:hidden",
