@@ -21,7 +21,7 @@ function Card({ path = "", title, description, price, image }) {
         <img
           src={image}
           alt=""
-          className="object-cover w-full h-full drop-shadow-md"
+          className="pointer-events-none object-cover w-full h-full drop-shadow-md"
         />
       </div>
       <Link
