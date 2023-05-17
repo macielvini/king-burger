@@ -10,7 +10,7 @@
   }
 
   body {
-    @apply bg-background;
+    @apply bg-background antialiased;
   }
 
   input:disabled {
@@ -18,7 +18,11 @@
   }
 
   button:disabled {
-    @apply brightness-90 disabled:cursor-wait text-gray-200;
+    @apply brightness-90 disabled:cursor-wait text-gray-200 select-none;
+  }
+
+  button {
+    @apply select-none;
   }
 }
 
