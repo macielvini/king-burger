@@ -17,7 +17,7 @@ function Card({ path = "", title, description, price, image }) {
   }
 
   return (
-    <div className="min-w-[210px] h-[308px] lg:min-w-[304px] lg:h-[462px] bg-secondary rounded-lg grid grid-cols-1 place-items-center p-6 drop-shadow-sm gap-3 snap-center">
+    <div className="min-w-[210px] h-[340px] lg:min-w-[304px] lg:h-[462px] bg-secondary rounded-lg grid grid-cols-1 place-items-center p-6 drop-shadow-sm gap-3 snap-center">
       <div className=" rounded-full max-w-[100px] h-20 lg:h-[178px] lg:max-w-[230px]">
         <img
           src={image}
@@ -27,7 +27,7 @@ function Card({ path = "", title, description, price, image }) {
       </div>
       <Link
         to={path}
-        className="text-center font-medium overflow-hidden whitespace-nowrap overflow-ellipsis w-full lg:font-bold lg:text-2xl"
+        className="text-center font-medium w-full lg:font-bold lg:text-2xl leading-tight"
       >
         {title}
       </Link>
