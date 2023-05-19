@@ -7,11 +7,11 @@ export default {
         secondary: ["Suez One"],
       },
       colors: {
-        background: "#fff",
+        background: "#F9F0DF",
+        primary: " #D62300",
+        secondary: "#FFF",
         ink: "#151522",
         accent: "#522714",
-        primary: " #D62300",
-        secondary: "#f5ebdc",
       },
       animation: {
         "pulse-once": "pulse 1s linear",
