@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 function Card({ path = "", title, description, price, image }) {
   const [count, setCount] = useState(0);
+  const descriptionIsLong = description.length > 12;
 
   function minus() {
     if (count === 0) return;
@@ -30,8 +31,20 @@ function Card({ path = "", title, description, price, image }) {
       >
         {title}
       </Link>
-      <p className="hidden lg:block md:block leading-tight text-center text-sm">
-        {description}
+      <p className="hidden lg:inline-block md:inline-block leading-tight text-center text-sm opacity-80 max-h-8 overflow-hidden">
+        <span className="hidden md:inline-block xl:hidden lg:max-w-[160px]">
+          {descriptionIsLong ? (
+            <>
+              {description.split(", ").splice(0, 3).join(", ")}
+              <span className=""> e muito mais...</span>
+            </>
+          ) : (
+            description
+          )}
+        </span>
+        <span className="hidden xl:inline-block">
+          {description.split(", ").splice(0, 8).join(", ")}
+        </span>
       </p>
       <p className="font-secondary text-accent text-xl">
         R$ {price.toFixed(2)}
