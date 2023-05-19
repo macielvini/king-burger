@@ -24,7 +24,7 @@ function Home() {
   return (
     <>
       <Header cartCount={cartCount} />
-      <div className="w-full flex flex-col items-center">
+      <div className="w-full flex flex-col items-center pt-28 lg:pt-32">
         <div className="aspect-video max-w-screen-lg max-h-[600px] rounded-lg overflow-hidden">
           <img
             src="./src/assets/banners/banner1.png"
