@@ -9,17 +9,25 @@
     font-family: Poppins, system-ui, sans-serif;
   }
 
+  body {
+    @apply bg-background antialiased;
+  }
+
   input:disabled {
     @apply brightness-90 disabled:cursor-wait bg-slate-900 text-slate-400;
   }
 
   button:disabled {
-    @apply brightness-90 disabled:cursor-wait text-gray-200;
+    @apply brightness-90 disabled:cursor-wait text-gray-200 select-none;
+  }
+
+  button {
+    @apply select-none;
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply w-full bg-accent text-white font-bold p-3 rounded-lg hover:brightness-90 hover:transition-all active:brightness-110 hover:cursor-pointer;
+    @apply w-full bg-primary text-white font-bold p-3 rounded-lg hover:brightness-90 hover:transition-all active:brightness-110 hover:cursor-pointer;
   }
 }

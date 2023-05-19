@@ -39,16 +39,16 @@ function Login() {
   }
 
   return (
-    <div className="flex w-screen items-center justify-center h-screen flex-col lg:flex-row max-w-screen-xl m-auto">
-      <div className="font-secondary text-accent w-full text-4xl md:text-5xl md:mb-10 font-bold flex justify-center items-center gap-4">
+    <div className="max-w-screen-xl flex items-center justify-center h-screen flex-col lg:flex-row">
+      <div className="font-secondary text-accent w-full text-4xl md:text-5xl md:mb-10 font-bold flex justify-center items-center gap-4 lg:px-12">
         <img src={logo} alt="logo" className="w-12 h-12 md:w-24 md:h-24" />
         KING BURGER
       </div>
-      <div className="w-full flex justify-center items-center lg:px-10">
+      <div className="w-full flex justify-center items-center">
         <form
           onSubmit={formSubmit}
           action=""
-          className="md:bg-secondary md:p-16 px-12 py-16 mt-3 rounded-xl flex flex-col gap-8 w-full max-w-xl"
+          className="md:bg-secondary md:p-16 px-12 py-16 rounded-xl flex flex-col gap-8 w-full max-w-xl"
         >
           <p className="hidden md:block text-4xl text-center font-medium">
             Faça login
