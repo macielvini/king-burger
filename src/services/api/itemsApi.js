@@ -12,4 +12,10 @@ async function findItemsByCategoryId(id) {
   return res.data;
 }
 
-export const itemsApi = { findCategories, findItemsByCategoryId };
+async function findItemById(id) {
+  const res = await api.get(`/items/${id}`);
+
+  return res.data;
+}
+
+export const itemsApi = { findCategories, findItemsByCategoryId, findItemById };
