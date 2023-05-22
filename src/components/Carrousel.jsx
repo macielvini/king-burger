@@ -45,6 +45,7 @@ function Carrousel({ id, title }) {
                   price={card.price}
                   title={card.name}
                   image={card.image}
+                  id={card.id}
                 />
               );
             })}
