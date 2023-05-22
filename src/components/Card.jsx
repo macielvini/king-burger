@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import * as Icons from "@tabler/icons-react";
 import { Link } from "react-router-dom";
 
-function Card({ path = "", title, description, price, image }) {
+function Card({ id, title, description, price, image }) {
   const [count, setCount] = useState(0);
   const descriptionIsLong = description.length > 12;
 
@@ -26,7 +26,7 @@ function Card({ path = "", title, description, price, image }) {
         />
       </div>
       <Link
-        to={path}
+        to={`item/${id}`}
         className="text-center font-medium w-full lg:font-bold lg:text-2xl leading-tight"
       >
         {title}
