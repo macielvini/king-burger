@@ -5,6 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../hooks/useAuth";
 import { toast } from "react-hot-toast";
 import { authApi } from "../../services/api/authApi";
+import { api } from "../../services/api/api";
 
 function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -24,6 +25,7 @@ function Login() {
       const res = await authApi.login(form);
       setCredentials({ ...credentials, token: res.accessToken });
       updateStorage({ ...credentials, token: res.accessToken });
+      api.defaults.headers.authorization = `Bearer ${res.accessToken}`;
 
       navigate("/");
     } catch (error) {
