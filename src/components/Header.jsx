@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import Logo from "./Logo";
 import * as Icons from "@tabler/icons-react";
 import clsx from "clsx";
-import { Link } from "react-router-dom";
+import { Link, redirect, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
 function Header({ cartCount = 0 }) {
   const [search, setSearch] = useState("");
   const { clearStorage } = useAuth();
+  const navigate = useNavigate();
 
   function onEnter(e) {
     if (e.key === "Enter") {
@@ -19,6 +20,8 @@ function Header({ cartCount = 0 }) {
     const sure = window.confirm("Sair da sua conta?");
     if (sure) {
       clearStorage();
+      navigate("/");
+      navigate(0);
     }
   }
 
