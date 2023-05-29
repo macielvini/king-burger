@@ -2,26 +2,16 @@ import React, { useState } from "react";
 import Logo from "./Logo";
 import * as Icons from "@tabler/icons-react";
 import clsx from "clsx";
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
 function Header({ cartCount = 0, showSidebar }) {
   const [search, setSearch] = useState("");
-  const { clearStorage } = useAuth();
-  const navigate = useNavigate();
+  const { logout } = useAuth();
 
   function onEnter(e) {
     if (e.key === "Enter") {
       window.alert("Pesquisar: " + e.target.value);
-    }
-  }
-
-  function logout() {
-    const sure = window.confirm("Sair da sua conta?");
-    if (sure) {
-      clearStorage();
-      navigate("/");
-      navigate(0);
     }
   }
 

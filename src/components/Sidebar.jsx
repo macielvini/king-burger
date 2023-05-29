@@ -1,7 +1,10 @@
 import React from "react";
 import * as Icons from "@tabler/icons-react";
+import { useAuth } from "../hooks/useAuth";
 
 function Sidebar({ display, hide }) {
+  const { logout } = useAuth();
+
   return (
     <>
       <aside
@@ -23,7 +26,7 @@ function Sidebar({ display, hide }) {
           />
           <ul className="font-light text-2xl flex flex-col gap-3 [&>li]:border-b-[2px] [&>li]:border-accent [&>li]:border-opacity-25 [&>li]:py-4">
             <li>Novo prato</li>
-            <li>Sair</li>
+            <li onClick={logout}>Sair</li>
           </ul>
         </div>
       </aside>
