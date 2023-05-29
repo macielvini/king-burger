@@ -1,5 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import { api } from "../services/api/api";
+import { useNavigate } from "react-router-dom";
 
 export const authContext = createContext();
 
@@ -8,6 +9,7 @@ export default function AuthProvider({ children }) {
     token: "",
     name: "",
     email: "",
+    role: "",
   });
 
   function setHeaders(token) {
@@ -22,6 +24,14 @@ export default function AuthProvider({ children }) {
     localStorage.removeItem("credentials");
   }
 
+  function logout() {
+    const sure = window.confirm("Deseja mesmo sair da sua conta?");
+    if (sure) {
+      clearStorage();
+      window.location.href = "/";
+    }
+  }
+
   useEffect(() => {
     const storage = localStorage.getItem("credentials");
     if (storage) setCredentials(JSON.parse(storage));
@@ -34,7 +44,13 @@ export default function AuthProvider({ children }) {
 
   return (
     <authContext.Provider
-      value={{ credentials, setCredentials, updateStorage, clearStorage }}
+      value={{
+        credentials,
+        setCredentials,
+        updateStorage,
+        clearStorage,
+        logout,
+      }}
     >
       {children}
     </authContext.Provider>
