@@ -30,4 +30,8 @@
   .btn-primary {
     @apply w-full bg-primary text-white font-bold p-3 rounded-lg hover:brightness-90 hover:transition-all active:brightness-110 hover:cursor-pointer;
   }
+
+  .p-body {
+    @apply max-w-screen-lg m-auto text-ink px-6 md:px-20 lg:px-16 xl:px-0;
+  }
 }
