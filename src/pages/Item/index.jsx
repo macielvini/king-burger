@@ -46,7 +46,6 @@ function Item() {
 
   return (
     <>
-      <Header />
       <div className="w-full flex flex-col pt-28 lg:pt-32 pb-8 lg:pb-0">
         <div
           className=" w-fit py-1 pr-2 select-none rounded-full flex items-center gap-2 text-xl mb-3 active:bg-secondary  transition-all"
@@ -124,7 +123,6 @@ function Item() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }
