@@ -3,8 +3,8 @@ import Logo from "./Logo";
 
 function Footer() {
   return (
-    <footer className="w-screen h-20 bg-secondary flex items-center justify-center self-end">
-      <div className="max-w-screen-lg md:px-20 lg:px-16 xl:px-0 px-6 w-full flex justify-between">
+    <footer className="w-full h-20 bg-secondary flex items-center justify-center self-end">
+      <div className="w-full flex justify-between p-body">
         <Logo size="xs" />
         <p>
           2023 - <span className="sm:inline hidden">Projeto criado por </span>

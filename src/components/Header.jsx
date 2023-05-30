@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import Logo from "./Logo";
 import * as Icons from "@tabler/icons-react";
 import clsx from "clsx";
-import { Link, redirect, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
 
-function Header({ cartCount = 0 }) {
+function Header({ cartCount = 0, showSidebar }) {
   const [search, setSearch] = useState("");
-  const { clearStorage } = useAuth();
-  const navigate = useNavigate();
+  const { logout } = useAuth();
 
   function onEnter(e) {
     if (e.key === "Enter") {
@@ -16,19 +15,10 @@ function Header({ cartCount = 0 }) {
     }
   }
 
-  function logout() {
-    const sure = window.confirm("Sair da sua conta?");
-    if (sure) {
-      clearStorage();
-      navigate("/");
-      navigate(0);
-    }
-  }
-
   return (
     <header className="w-screen h-24 flex justify-center items-center bg-secondary fixed top-0 left-0 lg:h-28 z-10">
-      <div className="w-full lg:min-w-[896px] max-w-screen-lg flex justify-between gap-8 items-center mx-6 md:mx-20">
-        <Icons.IconMenu2 className="h-5 lg:hidden" />
+      <div className="w-full flex justify-between gap-8 items-center p-body">
+        <Icons.IconMenu2 className="h-5 lg:hidden" onClick={showSidebar} />
         <Link to={"/"}>
           <Logo size="sm" />
         </Link>

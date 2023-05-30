@@ -3,6 +3,7 @@ import Header from "../../components/Header";
 import Carrousel from "../../components/Carrousel";
 import Footer from "../../components/Footer";
 import { itemsApi } from "../../services/api/itemsApi";
+import Sidebar from "../../components/Sidebar";
 
 function Home() {
   const [cartCount, setCartCount] = useState(0);
@@ -23,7 +24,6 @@ function Home() {
 
   return (
     <>
-      <Header cartCount={cartCount} />
       <div className="w-full flex flex-col items-center pt-28 lg:pt-32">
         <div className="aspect-video max-w-screen-lg max-h-[600px] rounded-lg overflow-hidden">
           <img
@@ -40,7 +40,6 @@ function Home() {
             : "Carregando"}
         </div>
       </div>
-      <Footer />
     </>
   );
 }
